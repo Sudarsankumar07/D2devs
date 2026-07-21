@@ -6,7 +6,7 @@ function App() {
       <div className="glass-card">
         <div className="badge">Coming Soon</div>
         <h1 className="title">
-          D2devs <span className="gradient-text">Website</span>
+          D²Devs <span className="gradient-text">Website</span>
         </h1>
         <p className="subtitle">
           We are currently building something amazing. Stay tuned!
