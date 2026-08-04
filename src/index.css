@@ -1,54 +1,195 @@
-:root {
-  --bg: #09090b;
-  --text: #f4f4f5;
-  --text-muted: #a1a1aa;
-  --accent: #8b5cf6;
-  --accent-secondary: #d946ef;
-  --font-family: 'Outfit', system-ui, sans-serif;
+@import "tailwindcss";
+
+@theme {
+  --color-secondary-fixed: #dae2fd;
+  --color-on-tertiary-fixed-variant: #444749;
+  --color-outline: #737686;
+  --color-surface-container-lowest: #ffffff;
+  --color-primary-fixed: #dbe1ff;
+  --color-on-secondary: #ffffff;
+  --color-on-primary-container: #eeefff;
+  --color-surface-container-high: #dce9ff;
+  --color-on-primary-fixed-variant: #003ea8;
+  --color-surface-variant: #d3e4fe;
+  --color-on-primary: #ffffff;
+  --color-on-secondary-container: #5c647a;
+  --color-tertiary-fixed-dim: #c4c7c9;
+  --color-surface-bright: #f8f9ff;
+  --color-primary-container: #2563eb;
+  --color-on-tertiary-fixed: #191c1e;
+  --color-surface-container: #e5eeff;
+  --color-primary-fixed-dim: #b4c5ff;
+  --color-on-surface: #0b1c30;
+  --color-surface-container-low: #eff4ff;
+  --color-surface-tint: #0053db;
+  --color-error-container: #ffdad6;
+  --color-inverse-surface: #213145;
+  --color-surface-dim: #cbdbf5;
+  --color-on-error-container: #93000a;
+  --color-on-tertiary: #ffffff;
+  --color-secondary-container: #dae2fd;
+  --color-tertiary-fixed: #e0e3e5;
+  --color-inverse-on-surface: #eaf1ff;
+  --color-secondary-fixed-dim: #bec6e0;
+  --color-on-surface-variant: #434655;
+  --color-tertiary-container: #6b6e70;
+  --color-secondary: #565e74;
+  --color-primary: #004ac6;
+  --color-on-tertiary-container: #eff1f3;
+  --color-on-primary-fixed: #00174b;
+  --color-error: #ba1a1a;
+  --color-on-secondary-fixed: #131b2e;
+  --color-background: #f8f9ff;
+  --color-inverse-primary: #b4c5ff;
+  --color-outline-variant: #c3c6d7;
+  --color-tertiary: #525657;
+  --color-surface-container-highest: #d3e4fe;
+  --color-on-background: #0b1c30;
+  --color-on-secondary-fixed-variant: #3f465c;
+  --color-surface: #f8f9ff;
+  --color-on-error: #ffffff;
+
+  --spacing-grid-margin: 4rem;
+  --spacing-section-padding: 8rem;
+  --spacing-asymmetric-offset: 6rem;
+  --spacing-technical-gap: 0.25rem;
+  --spacing-grid-gutter: 1.5rem;
+
+  --font-sans: "Inter", sans-serif;
+  --font-label-technical: "JetBrains Mono", monospace;
+  --font-body-lg: "Inter", sans-serif;
+  --font-headline-lg: "Inter", sans-serif;
+  --font-headline-md: "Inter", sans-serif;
+  --font-body-md: "Inter", sans-serif;
+  --font-headline-lg-mobile: "Inter", sans-serif;
+  --font-display-xl: "Inter", sans-serif;
+  --font-label-caps: "JetBrains Mono", monospace;
+
+  --text-label-technical: 10px;
+  --text-label-technical--line-height: 14px;
+  --text-label-technical--letter-spacing: 0.05em;
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 28px;
+  --text-headline-lg: 48px;
+  --text-headline-lg--line-height: 56px;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-md: 30px;
+  --text-headline-md--line-height: 38px;
+  --text-headline-md--letter-spacing: -0.01em;
+  --text-body-md: 16px;
+  --text-body-md--line-height: 24px;
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 40px;
+  --text-headline-lg-mobile--letter-spacing: -0.02em;
+  --text-display-xl: 80px;
+  --text-display-xl--line-height: 90px;
+  --text-display-xl--letter-spacing: -0.04em;
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 16px;
+  --text-label-caps--letter-spacing: 0.15em;
+}
+
+@layer utilities {
+  .font-technical {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .font-sans-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  .font-label-technical {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+  }
+  .font-label-caps {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+  }
 }
 
 body {
   margin: 0;
-  font-family: var(--font-family);
-  background-color: var(--bg);
-  color: var(--text);
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(139, 92, 246, 0.15), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(217, 70, 239, 0.15), transparent 25%);
-  background-attachment: fixed;
-  background-size: cover;
+  padding: 0;
 }
 
-/* subtle animated background noise */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
-  opacity: 0.03;
-  z-index: -1;
-  pointer-events: none;
+.glass-panel {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-#root {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.technical-grid {
+  background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(0, 74, 198, 0.1);
+  color: transparent;
+}
+
+.asymmetric-canvas {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+.futuristic-pane {
+  backdrop-filter: blur(30px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  border: 0.5px solid rgba(0, 74, 198, 0.2);
+  box-shadow: 0 30px 60px rgba(0, 74, 198, 0.05), inset 0 0 0 0.5px rgba(255, 255, 255, 0.8);
   position: relative;
-  z-index: 1;
+  overflow: hidden;
 }
 
-* {
-  box-sizing: border-box;
+.data-mesh {
+  background-image: linear-gradient(rgba(0, 74, 198, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 74, 198, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-h1, h2, h3, p {
-  margin: 0;
+.scanner-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 74, 198, 0.8), transparent);
+  box-shadow: 0 0 10px rgba(0, 74, 198, 0.5);
+  animation: scan 4s linear infinite;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.futuristic-pane:hover .scanner-line {
+  opacity: 1;
+}
+
+@keyframes scan {
+  0% {
+    top: -10%;
+  }
+  100% {
+    top: 110%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
 }
