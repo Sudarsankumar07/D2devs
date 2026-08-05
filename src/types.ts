@@ -7,10 +7,13 @@ export interface Project {
   title: string;
   description: string;
   fullDetails?: string;
+  highlights?: string[];
   imageUrl: string;
   metrics: { label: string; value: string }[];
   techStack: string[];
   status: 'LIVE' | 'STAGING' | 'DEPLOYED' | 'PLANNED';
+  link?: string;
+  linkLabel?: string;
 }
 
 export interface TechnicalSpec {

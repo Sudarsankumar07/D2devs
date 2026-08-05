@@ -16,9 +16,6 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onStartProject
             What We Build
           </h2>
         </div>
-        <p className="font-sans text-[#434655] max-w-md text-base leading-relaxed">
-          Websites, mobile apps, automation tools and AI systems — plus training in AI/ML and Python, all engineered with React, React Native, TypeScript, Python and Node.js.
-        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

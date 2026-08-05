@@ -8,11 +8,36 @@ export const ContactSection: React.FC = () => {
     projectScope: 'AI & Machine Learning',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email) return;
-    setSubmitted(true);
+    
+    setIsSubmitting(true);
+    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd_pr1BlGWrfvcKoMpDN3vmhYHB9IY0BNdxD3RVT35_L6CFZA/formResponse';
+    const formBody = new URLSearchParams();
+    formBody.append('entry.429560998', formData.name);
+    formBody.append('entry.1763658554', formData.email);
+    formBody.append('entry.833238667', formData.projectScope);
+    formBody.append('entry.1292918307', formData.message);
+
+    try {
+      await fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form', error);
+      alert('Failed to send transmission. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -32,11 +57,11 @@ export const ContactSection: React.FC = () => {
           <div className="space-y-4 font-technical text-sm text-[#0b1c30]">
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#004ac6]">mail</span>
-              <span>engineering@d2devs.io</span>
+              <span>d2developerss@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#004ac6]">location_on</span>
-              <span>Chennai // Remote // Worldwide</span>
+              <span>Salem // Remote // Worldwide</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#004ac6]">schedule</span>
@@ -122,9 +147,10 @@ export const ContactSection: React.FC = () => {
 
               <button
                 type="submit"
-                className="w-full py-4 bg-[#004ac6] hover:bg-[#2563eb] text-white font-label-caps text-xs tracking-widest uppercase rounded-xl shadow-lg transition-all cursor-pointer"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-[#004ac6] hover:bg-[#2563eb] disabled:bg-[#004ac6]/70 text-white font-label-caps text-xs tracking-widest uppercase rounded-xl shadow-lg transition-all cursor-pointer disabled:cursor-not-allowed"
               >
-                Transmit Specification
+                {isSubmitting ? 'Transmitting...' : 'Transmit Specification'}
               </button>
             </form>
           )}

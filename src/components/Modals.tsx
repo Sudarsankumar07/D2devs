@@ -89,6 +89,7 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
 }) => {
   const [step, setStep] = useState(1);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -99,10 +100,38 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
 
   if (!isOpen) return null;
 
-  const handleNext = (e: React.FormEvent) => {
+  const handleNext = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (step < 2) setStep(2);
-    else setSubmitted(true);
+    if (step < 2) {
+      setStep(2);
+      return;
+    }
+
+    setIsSubmitting(true);
+    const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd_pr1BlGWrfvcKoMpDN3vmhYHB9IY0BNdxD3RVT35_L6CFZA/formResponse';
+    const formBody = new URLSearchParams();
+    formBody.append('entry.429560998', form.name);
+    formBody.append('entry.1763658554', form.email);
+    
+    const combinedDetails = `Service: ${form.service}\nBudget: ${form.budget}\nDetails: ${form.details}`;
+    formBody.append('entry.1292918307', combinedDetails);
+
+    try {
+      await fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: formBody.toString(),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error('Error submitting form', error);
+      alert('Failed to send transmission. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -241,9 +270,10 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
                   </button>
                   <button
                     type="submit"
-                    className="w-2/3 py-3.5 bg-[#004ac6] text-white rounded-xl font-label-caps text-xs uppercase font-bold"
+                    disabled={isSubmitting}
+                    className="w-2/3 py-3.5 bg-[#004ac6] hover:bg-[#2563eb] disabled:bg-[#004ac6]/70 text-white rounded-xl font-label-caps text-xs uppercase font-bold disabled:cursor-not-allowed"
                   >
-                    Submit Project Brief
+                    {isSubmitting ? 'Submitting...' : 'Submit Project Brief'}
                   </button>
                 </div>
               </>
@@ -270,7 +300,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fade-in">
-      <div className="bg-white text-[#0b1c30] w-full max-w-4xl rounded-3xl p-6 sm:p-8 border border-white/60 shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div className="bg-white text-[#0b1c30] w-full max-w-4xl rounded-3xl p-6 sm:p-8 border border-white/60 shadow-2xl max-h-[90vh] overflow-y-auto no-scrollbar">
         <div className="flex justify-between items-start pb-4 border-b border-gray-200">
           <div>
             <div className="flex items-center gap-3 mb-1">
@@ -297,9 +327,22 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             <h4 className="font-label-technical text-xs text-[#004ac6] uppercase font-bold mb-2">
               ARCHITECTURAL BREAKDOWN
             </h4>
-            <p className="font-sans text-base text-[#434655] leading-relaxed">
+            <p className="font-sans text-sm sm:text-base text-[#434655] leading-relaxed">
               {project.fullDetails || project.description}
             </p>
+            {project.highlights && project.highlights.length > 0 && (
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {project.highlights.map((h, i) => (
+                  <div
+                    key={i}
+                    className="flex items-start gap-3 bg-blue-50/70 border border-blue-100 rounded-xl px-4 py-3"
+                  >
+                    <span className="material-symbols-outlined text-[#004ac6] text-lg mt-0.5 shrink-0">check_circle</span>
+                    <span className="font-sans text-sm text-[#0b1c30] leading-snug">{h}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
           <div>
@@ -346,6 +389,16 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
             >
               Close
             </button>
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                className="flex-1 sm:flex-initial px-6 py-2.5 bg-[#0b1c30] text-white rounded-xl font-label-caps text-xs text-center hover:bg-[#1d2f45]"
+              >
+                {project.linkLabel || 'Visit Live Project'}
+              </a>
+            )}
             <button
               onClick={() => {
                 onClose();

@@ -2,15 +2,74 @@ import type { Project, TechnicalSpec, PricingTier, ServiceItem, Testimonial } fr
 
 export const INITIAL_PROJECTS: Project[] = [
   {
+    id: 'laptopkart',
+    category: 'WEB_PLATFORM',
+    categoryLabel: 'WEB_PLATFORM',
+    buildVersion: 'BUILD_v1.0',
+    lat: 'LAT: 13.0827° N',
+    title: 'Laptopkart',
+    description: 'An e-commerce website for buying certified refurbished laptops, desktops and tech accessories online — browse the catalog, add products to cart, and complete a multi-step checkout with delivery and payment.',
+    highlights: [
+      'Full storefront: product catalog with listings, stock and pricing',
+      'Dynamic filtering by brand, RAM, grade and price',
+      'Interactive shopping cart with quantity controls and coupon support',
+      'Multi-step checkout: Address → Delivery → Payment → Confirmation',
+      'Wishlist and side-by-side product comparison',
+      'Responsive dark-mode UI with centralized COLOR_TOKENS theme'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80',
+    metrics: [
+      { label: 'Checkout Flow', value: '4 Steps' },
+      { label: 'Rendering', value: 'SSR' }
+    ],
+    techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Lucide React'],
+    status: 'LIVE',
+    link: 'https://laptopkart.in',
+    linkLabel: 'Visit Live Site'
+  },
+  {
+    id: 'action-reaction',
+    category: 'MOBILE_APP',
+    categoryLabel: 'MOBILE_APP',
+    buildVersion: 'BUILD_v1.0',
+    lat: 'LAT: 13.0827° N',
+    title: 'Action Reaction',
+    description: 'An interactive word-guessing game with 5 game modes, AI-powered hints and motion-controlled multiplayer.',
+    highlights: [
+      '5 game modes: Multiplayer, AI Hints, Time Attack, Memory Challenge & Practice',
+      'Motion-controlled multiplayer — tilt face-down for correct, face-up to pass',
+      'AI hints powered by Groq llama-3.3-70b-versatile with 4 progressive levels',
+      '7 themed topics with 300+ words and full emoji support',
+      'Auto online/offline switching with smart offline hint caching',
+      'Firebase-secured AI: anonymous auth, auto-expiring JWTs, no keys in app'
+    ],
+    imageUrl: '/action-reaction-icon.png',
+    metrics: [
+      { label: 'Game Modes', value: '5' },
+      { label: 'Word Database', value: '300+' },
+      { label: 'Themed Topics', value: '7' },
+      { label: 'AI Hint Levels', value: '4' }
+    ],
+    techStack: ['React Native', 'Expo SDK 54', 'JavaScript', 'Groq LLM', 'AsyncStorage', 'NetInfo', 'Expo Sensors'],
+    status: 'DEPLOYED',
+    link: 'https://action-reaction.en.uptodown.com/android/download',
+    linkLabel: 'Play / Download Game'
+  },
+  {
     id: 'web-platform',
     category: 'WEB_PLATFORM',
-    categoryLabel: '[ WEB_PLATFORM ]',
+    categoryLabel: 'WEB_PLATFORM',
     buildVersion: 'BUILD_v1.0',
     lat: 'LAT: 13.0827° N',
     title: 'Scalable Web Platforms',
     description: 'High-performance websites and web applications built with React, TypeScript and Node.js.',
-    fullDetails: 'End-to-end web engineering: from marketing sites to complex SaaS dashboards. We ship responsive, accessible and fast web experiences using React and TypeScript, backed by robust Node.js APIs and modern deployment pipelines.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCxsO_yuy3TWAGY2V_Sj1rvmGGhyiilputriBYKvkUc32bT13hhK3Dy3d1cF7coRzZosJ6UQRazzM78FMT5I7KAjZA8AShhUhYCoqLbydNMqroy4UxtIptYoCEmJjuOjAcOHkPKPoClwIfFeEiNcp3FIo9Yj9ogfbpm41KIYFysF8qNLzghYia8O043OZU2DJTDdisQSsAnnz0f8EkyZRcz6b7Goa1fbzl8F7f4hCeQLcqe8i6U2fD4ZA',
+    highlights: [
+      'Responsive, accessible and SEO-optimized frontends',
+      'React + TypeScript + Node.js full-stack architecture',
+      'From marketing sites to complex SaaS dashboards',
+      'Modern deployment pipelines with high uptime'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     metrics: [
       { label: 'Page Load', value: '< 1.2s' },
       { label: 'Lighthouse', value: '95+ / 100' },
@@ -22,13 +81,18 @@ export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'mobile-app',
     category: 'MOBILE_APP',
-    categoryLabel: '[ MOBILE_APP ]',
+    categoryLabel: 'MOBILE_APP',
     buildVersion: 'BUILD_v0.9',
     lat: 'LAT: 12.9716° N',
     title: 'React Native Mobile Apps',
     description: 'Cross-platform iOS & Android applications engineered for native performance from a single codebase.',
-    fullDetails: 'We design and build mobile applications with React Native and TypeScript — shipping to iOS and Android simultaneously while preserving a native look and feel, smooth animations and offline-first architecture.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDBsFwFZGc9LLB8JAHPVTLiq8lMpCjtdVgwxIv5xmUM2vS6Yf6HW2cRCswGptIXZWbqdLEWsVKXLJtEtdMb96IVv5QoCxLiCJAL-gRUP6s4fqfndWAySdaYv1hjcJ3m8BqwOkYU_zgqFDAXCYC2jDgcA2QBNzIHj8al6upkHf-CW3mDXDSXSh-LKPZwU80jYW5aqzLvxEUO9eYSxaz9Z4vw16ZM38Z7kOS8UEvlIN9gKQMwvK_q1oI3uA',
+    highlights: [
+      'Single TypeScript codebase for iOS & Android',
+      'Offline-first architecture with smooth animations',
+      'Native look and feel without duplicating code',
+      'Performance-tuned: fast startup, crash-free runtime'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=80',
     metrics: [
       { label: 'Startup Time', value: '< 1.8s' },
       { label: 'Crash-Free Rate', value: '99.5%' },
@@ -40,13 +104,18 @@ export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'automation-tool',
     category: 'AUTOMATION',
-    categoryLabel: '[ AUTOMATION ]',
+    categoryLabel: 'AUTOMATION',
     buildVersion: 'BUILD_v0.7',
     lat: 'LAT: 11.0168° N',
     title: 'Workflow Automation Tools',
     description: 'Custom automation pipelines and intelligent bots that eliminate repetitive manual work.',
-    fullDetails: 'We build tailored automation tools in Python and Node.js — data pipelines, report generators, API integrations and task bots — that plug into your existing systems and save hundreds of engineering hours every month.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCYntfMzB_RIXMC6kpxasA7JZJulsx5ZryIIx0R2akWh74RCNY22D336BjoOIFrR5FSSRnAZ_1U16sCM1txVceiYsekADDcdxskfq6ClSVevNAG73a07yH7wrIZeo0dXw3XwKBR2M4lhdNxFH0AFkV6UNRctjX7yUM_D2EcfyBfMblY1DgIlFdasQ-wJqbZ3kAH-Q8I8BWaQttWrj9cF7tQHoDh_NSxD2efDjxtDLDhhgKZfYQkCbsMVA',
+    highlights: [
+      'Python & Node.js automation pipelines',
+      'API integrations and scheduled workflows',
+      'Report generators and intelligent task bots',
+      'Saves hundreds of engineering hours monthly'
+    ],
+    imageUrl: 'https://plus.unsplash.com/premium_photo-1680608979589-e9349ed066d5?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     metrics: [
       { label: 'Tasks Automated', value: '10k+/mo' },
       { label: 'Hours Saved', value: '300+/mo' },
@@ -58,19 +127,24 @@ export const INITIAL_PROJECTS: Project[] = [
   {
     id: 'mcp-server',
     category: 'AI_ENGINEERING',
-    categoryLabel: '[ AI_ENGINEERING ]',
+    categoryLabel: 'AI_ENGINEERING',
     buildVersion: 'BUILD_v0.1',
     lat: 'LAT: 10.8505° N',
-    title: 'MCP Server & LLM Fine-Tuning',
-    description: 'Our own Model Context Protocol server and fine-tuned LLM pipelines for production-ready AI systems.',
-    fullDetails: 'Currently in the planning phase: we are building our own Model Context Protocol (MCP) server plus fine-tuned language models to power real-world AI projects — custom assistants, retrieval pipelines and agentic workflows built with Python and modern AI tooling.',
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCYntfMzB_RIXMC6kpxasA7JZJulsx5ZryIIx0R2akWh74RCNY22D336BjoOIFrR5FSSRnAZ_1U16sCM1txVceiYsekADDcdxskfq6ClSVevNAG73a07yH7wrIZeo0dXw3XwKBR2M4lhdNxFH0AFkV6UNRctjX7yUM_D2EcfyBfMblY1DgIlFdasQ-wJqbZ3kAH-Q8I8BWaQttWrj9cF7tQHoDh_NSxD2efDjxtDLDhhgKZfYQkCbsMVA',
+    title: 'MCP Server & Context Planning',
+    description: 'An MCP server that gives AI coding assistants a smarter way to work — instead of feeding the model an entire codebase, it plans exactly which code a task needs and sends only that. Faster answers, far fewer tokens, and edits that land on the right code every time.',
+    highlights: [
+      'An open, MCP-compatible context engine for coding AI',
+      'The AI sees only the code it needs — never the whole repo',
+      'Token-aware planning that cuts cost and response latency',
+      'Plugs into any MCP-enabled assistant or LLM'
+    ],
+    imageUrl: 'https://images.unsplash.com/photo-1645839057098-5ea8761a6b09?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     metrics: [
       { label: 'Protocol', value: 'MCP v0.1' },
       { label: 'Context', value: '128k tokens' },
       { label: 'Status', value: 'IN_PLAN' }
     ],
-    techStack: ['Python', 'PyTorch', 'MCP Protocol', 'Node.js', 'TypeScript'],
+    techStack: ['MCP Protocol', 'TypeScript', 'Node.js', 'Tree-sitter', 'Graph Database', 'Git'],
     status: 'PLANNED'
   }
 ];
