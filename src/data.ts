@@ -1,4 +1,6 @@
 import type { Project, TechnicalSpec, PricingTier, ServiceItem, Testimonial } from './types';
+import laptopkartLogo from './assets/Laptopkart logo.png';
+import actionReactionImage from './assets/charades.png';
 
 export const INITIAL_PROJECTS: Project[] = [
     {
@@ -109,7 +111,7 @@ export const INITIAL_PROJECTS: Project[] = [
       'Wishlist and side-by-side product comparison',
       'Responsive dark-mode UI with centralized COLOR_TOKENS theme'
     ],
-    imageUrl: 'src/assets/Laptopkart logo.png',
+    imageUrl: laptopkartLogo,
     imageFit: 'contain',
     metrics: [
       { label: 'Checkout Flow', value: '4 Steps' },
@@ -136,7 +138,7 @@ export const INITIAL_PROJECTS: Project[] = [
       'Auto online/offline switching with smart offline hint caching',
       'Firebase-secured AI: anonymous auth, auto-expiring JWTs, no keys in app'
     ],
-    imageUrl: 'src/assets/charades.png',
+    imageUrl: actionReactionImage,
     metrics: [
       { label: 'Game Modes', value: '5' },
       { label: 'Word Database', value: '300+' },
