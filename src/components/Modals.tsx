@@ -320,7 +320,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
         <div className="py-6 space-y-6">
           <div className="h-64 sm:h-80 rounded-2xl overflow-hidden border border-gray-200">
-            <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain p-4 sm:p-6 bg-white' : 'object-cover'}`}
+            />
           </div>
 
           <div>

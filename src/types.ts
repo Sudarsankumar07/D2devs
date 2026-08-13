@@ -9,6 +9,7 @@ export interface Project {
   fullDetails?: string;
   highlights?: string[];
   imageUrl: string;
+  imageFit?: 'cover' | 'contain';
   metrics: { label: string; value: string }[];
   techStack: string[];
   status: 'LIVE' | 'STAGING' | 'DEPLOYED' | 'PLANNED';

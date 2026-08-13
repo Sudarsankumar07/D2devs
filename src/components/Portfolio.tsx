@@ -87,7 +87,7 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0b1c30]/95 via-[#0b1c30]/40 to-transparent z-10"></div>
                 <img
                   alt={project.title}
-                  className={`w-full h-full object-cover transition-transform duration-[1.5s] ${isActive ? 'scale-105' : 'scale-100 grayscale-[30%]'}`}
+                  className={`w-full h-full ${project.imageFit === 'contain' ? 'object-contain p-4 sm:p-6 bg-white/5' : 'object-cover'} transition-transform duration-[1.5s] ${isActive ? 'scale-105' : 'scale-100 grayscale-[30%]'}`}
                   src={project.imageUrl}
                 />
               </div>

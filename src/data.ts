@@ -1,59 +1,28 @@
 import type { Project, TechnicalSpec, PricingTier, ServiceItem, Testimonial } from './types';
 
 export const INITIAL_PROJECTS: Project[] = [
-  {
-    id: 'laptopkart',
-    category: 'WEB_PLATFORM',
-    categoryLabel: 'WEB_PLATFORM',
-    buildVersion: 'BUILD_v1.0',
-    lat: 'LAT: 13.0827° N',
-    title: 'Laptopkart',
-    description: 'An e-commerce website for buying certified refurbished laptops, desktops and tech accessories online — browse the catalog, add products to cart, and complete a multi-step checkout with delivery and payment.',
+    {
+    id: 'mcp-server',
+    category: 'AI_ENGINEERING',
+    categoryLabel: 'AI_ENGINEERING',
+    buildVersion: 'BUILD_v0.1',
+    lat: 'LAT: 10.8505° N',
+    title: 'MCP Server & Context Planning',
+    description: 'An MCP server that gives AI coding assistants a smarter way to work — instead of feeding the model an entire codebase, it plans exactly which code a task needs and sends only that. Faster answers, far fewer tokens, and edits that land on the right code every time.',
     highlights: [
-      'Full storefront: product catalog with listings, stock and pricing',
-      'Dynamic filtering by brand, RAM, grade and price',
-      'Interactive shopping cart with quantity controls and coupon support',
-      'Multi-step checkout: Address → Delivery → Payment → Confirmation',
-      'Wishlist and side-by-side product comparison',
-      'Responsive dark-mode UI with centralized COLOR_TOKENS theme'
+      'An open, MCP-compatible context engine for coding AI',
+      'The AI sees only the code it needs — never the whole repo',
+      'Token-aware planning that cuts cost and response latency',
+      'Plugs into any MCP-enabled assistant or LLM'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80',
+    imageUrl: 'https://images.unsplash.com/photo-1645839057098-5ea8761a6b09?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     metrics: [
-      { label: 'Checkout Flow', value: '4 Steps' },
-      { label: 'Rendering', value: 'SSR' }
+      { label: 'Protocol', value: 'MCP v0.1' },
+      { label: 'Context', value: '128k tokens' },
+      { label: 'Status', value: 'IN_PLAN' }
     ],
-    techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Lucide React'],
-    status: 'LIVE',
-    link: 'https://laptopkart.in',
-    linkLabel: 'Visit Live Site'
-  },
-  {
-    id: 'action-reaction',
-    category: 'MOBILE_APP',
-    categoryLabel: 'MOBILE_APP',
-    buildVersion: 'BUILD_v1.0',
-    lat: 'LAT: 13.0827° N',
-    title: 'Action Reaction',
-    description: 'An interactive word-guessing game with 5 game modes, AI-powered hints and motion-controlled multiplayer.',
-    highlights: [
-      '5 game modes: Multiplayer, AI Hints, Time Attack, Memory Challenge & Practice',
-      'Motion-controlled multiplayer — tilt face-down for correct, face-up to pass',
-      'AI hints powered by Groq llama-3.3-70b-versatile with 4 progressive levels',
-      '7 themed topics with 300+ words and full emoji support',
-      'Auto online/offline switching with smart offline hint caching',
-      'Firebase-secured AI: anonymous auth, auto-expiring JWTs, no keys in app'
-    ],
-    imageUrl: '/action-reaction-icon.png',
-    metrics: [
-      { label: 'Game Modes', value: '5' },
-      { label: 'Word Database', value: '300+' },
-      { label: 'Themed Topics', value: '7' },
-      { label: 'AI Hint Levels', value: '4' }
-    ],
-    techStack: ['React Native', 'Expo SDK 54', 'JavaScript', 'Groq LLM', 'AsyncStorage', 'NetInfo', 'Expo Sensors'],
-    status: 'DEPLOYED',
-    link: 'https://action-reaction.en.uptodown.com/android/download',
-    linkLabel: 'Play / Download Game'
+    techStack: ['MCP Protocol', 'TypeScript', 'Node.js', 'Tree-sitter', 'Graph Database', 'Git'],
+    status: 'PLANNED'
   },
   {
     id: 'web-platform',
@@ -101,7 +70,7 @@ export const INITIAL_PROJECTS: Project[] = [
     techStack: ['React Native', 'TypeScript', 'JavaScript', 'Expo', 'Node.js'],
     status: 'STAGING'
   },
-  {
+    {
     id: 'automation-tool',
     category: 'AUTOMATION',
     categoryLabel: 'AUTOMATION',
@@ -125,27 +94,59 @@ export const INITIAL_PROJECTS: Project[] = [
     status: 'STAGING'
   },
   {
-    id: 'mcp-server',
-    category: 'AI_ENGINEERING',
-    categoryLabel: 'AI_ENGINEERING',
-    buildVersion: 'BUILD_v0.1',
-    lat: 'LAT: 10.8505° N',
-    title: 'MCP Server & Context Planning',
-    description: 'An MCP server that gives AI coding assistants a smarter way to work — instead of feeding the model an entire codebase, it plans exactly which code a task needs and sends only that. Faster answers, far fewer tokens, and edits that land on the right code every time.',
+    id: 'laptopkart',
+    category: 'WEB_PLATFORM',
+    categoryLabel: 'WEB_PLATFORM',
+    buildVersion: 'BUILD_v1.0',
+    lat: 'LAT: 13.0827° N',
+    title: 'Laptopkart',
+    description: 'An e-commerce website for buying certified refurbished laptops, desktops and tech accessories online — browse the catalog, add products to cart, and complete a multi-step checkout with delivery and payment.',
     highlights: [
-      'An open, MCP-compatible context engine for coding AI',
-      'The AI sees only the code it needs — never the whole repo',
-      'Token-aware planning that cuts cost and response latency',
-      'Plugs into any MCP-enabled assistant or LLM'
+      'Full storefront: product catalog with listings, stock and pricing',
+      'Dynamic filtering by brand, RAM, grade and price',
+      'Interactive shopping cart with quantity controls and coupon support',
+      'Multi-step checkout: Address → Delivery → Payment → Confirmation',
+      'Wishlist and side-by-side product comparison',
+      'Responsive dark-mode UI with centralized COLOR_TOKENS theme'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1645839057098-5ea8761a6b09?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    imageUrl: 'src/assets/Laptopkart logo.png',
+    imageFit: 'contain',
     metrics: [
-      { label: 'Protocol', value: 'MCP v0.1' },
-      { label: 'Context', value: '128k tokens' },
-      { label: 'Status', value: 'IN_PLAN' }
+      { label: 'Checkout Flow', value: '4 Steps' },
+      { label: 'Rendering', value: 'SSR' }
     ],
-    techStack: ['MCP Protocol', 'TypeScript', 'Node.js', 'Tree-sitter', 'Graph Database', 'Git'],
-    status: 'PLANNED'
+    techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Lucide React'],
+    status: 'LIVE',
+    link: 'https://laptopkart.in',
+    linkLabel: 'Visit Live Site'
+  },
+  {
+    id: 'action-reaction',
+    category: 'MOBILE_APP',
+    categoryLabel: 'MOBILE_APP',
+    buildVersion: 'BUILD_v1.0',
+    lat: 'LAT: 13.0827° N',
+    title: 'Action Reaction',
+    description: 'An interactive word-guessing game with 5 game modes, AI-powered hints and motion-controlled multiplayer.',
+    highlights: [
+      '5 game modes: Multiplayer, AI Hints, Time Attack, Memory Challenge & Practice',
+      'Motion-controlled multiplayer — tilt face-down for correct, face-up to pass',
+      'AI hints powered by Groq llama-3.3-70b-versatile with 4 progressive levels',
+      '7 themed topics with 300+ words and full emoji support',
+      'Auto online/offline switching with smart offline hint caching',
+      'Firebase-secured AI: anonymous auth, auto-expiring JWTs, no keys in app'
+    ],
+    imageUrl: 'src/assets/charades.png',
+    metrics: [
+      { label: 'Game Modes', value: '5' },
+      { label: 'Word Database', value: '300+' },
+      { label: 'Themed Topics', value: '7' },
+      { label: 'AI Hint Levels', value: '4' }
+    ],
+    techStack: ['React Native', 'Expo SDK 54', 'JavaScript', 'Groq LLM', 'AsyncStorage', 'NetInfo', 'Expo Sensors'],
+    status: 'DEPLOYED',
+    link: 'https://action-reaction.en.uptodown.com/android/download',
+    linkLabel: 'Play / Download Game'
   }
 ];
 
