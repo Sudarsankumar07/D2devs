@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
+import { AboutSection } from './components/AboutSection';
 import { Portfolio } from './components/Portfolio';
 import { ServicesSection } from './components/ServicesSection';
 import { PricingSection } from './components/PricingSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
+import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import {
@@ -52,6 +54,9 @@ export const HomePage: React.FC = () => {
           onOpenSpecsModal={() => setSpecsModalOpen(true)}
         />
 
+        {/* About Section */}
+        <AboutSection />
+
         {/* Portfolio Section */}
         <Portfolio
           projects={INITIAL_PROJECTS}
@@ -70,6 +75,9 @@ export const HomePage: React.FC = () => {
 
         {/* Testimonials Telemetry */}
         <TestimonialsSection />
+
+        {/* FAQ Section */}
+        <FaqSection />
 
         {/* Contact / Initiation Section */}
         <ContactSection />

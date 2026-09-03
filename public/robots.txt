@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.d2devs.co.in/sitemap.xml
+Sitemap: https://d2devs.co.in/sitemap.xml

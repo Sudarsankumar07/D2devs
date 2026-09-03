@@ -14,10 +14,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
+    { id: 'about', label: 'About' },
     { id: 'portfolio', label: 'Projects' },
     { id: 'services', label: 'Services' },
     { id: 'pricing', label: 'Pricing' },
     { id: 'testimonials', label: 'Testimonials' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
   ];
 

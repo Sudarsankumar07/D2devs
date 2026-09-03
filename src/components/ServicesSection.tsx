@@ -13,8 +13,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ onStartProject
             [ 03 // SERVICES & CAPABILITIES ]
           </span>
           <h2 className="font-sans font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0b1c30]">
-            What We Build
+            Software Solutions & Services
           </h2>
+          <p className="font-sans text-base text-[#434655] leading-relaxed mt-4 max-w-3xl">
+            D²devs delivers end-to-end software solutions from custom website development and mobile app engineering to AI product development and workflow automation for businesses across India and worldwide.
+          </p>
         </div>
       </div>
 

@@ -200,7 +200,7 @@ export const SERVICES: ServiceItem[] = [
     id: 'web-mobile',
     code: 'SVC_01 // WEB & MOBILE',
     title: 'Website & App Development',
-    description: 'Responsive websites, complex web applications and cross-platform mobile apps — designed and engineered end-to-end with React, React Native, TypeScript and Node.js.',
+    description: 'We design and develop custom websites, web applications, and mobile apps using React, React Native, TypeScript, and Node.js. From marketing sites to complex SaaS dashboards, our website development services in deliver responsive, accessible, and SEO-optimized digital products.',
     deliverables: ['Custom Websites & Web Apps', 'iOS & Android Apps (React Native)', 'API & Backend Architecture'],
     lat: 'LAT: 13.0827° N'
   },
@@ -208,7 +208,7 @@ export const SERVICES: ServiceItem[] = [
     id: 'automation-ai',
     code: 'SVC_02 // AUTOMATION & AI',
     title: 'Automation & AI Engineering',
-    description: 'Custom automation tools, AI-powered products, LLM fine-tuning and our own MCP server — built for real-world AI projects that ship.',
+    description: 'Our AI product development team builds custom AI systems, LLM fine-tuning pipelines, and workflow automation tools for businesses across Tamil Nadu. From intelligent automation to our own MCP server — we engineer AI solutions that ship and scale.',
     deliverables: ['Workflow Automation Tools', 'LLM Fine-Tuning & AI Projects', 'Own MCP Server Build (IN_PLAN)'],
     lat: 'LAT: 12.9716° N'
   },
@@ -216,7 +216,7 @@ export const SERVICES: ServiceItem[] = [
     id: 'education',
     code: 'SVC_03 // EDUCATION',
     title: 'AI/ML & Python Education',
-    description: 'Hands-on training in AI/ML and Python — from fundamentals to practical projects — so teams and students can build with modern AI themselves.',
+    description: 'Hands-on AI/ML and Python training programs — equipping the next generation of builders with practical skills. From fundamentals to advanced projects, our education programs help students and teams build with modern AI.',
     deliverables: ['AI/ML Training Programs', 'Python Programming Courses', 'Project-Based Learning'],
     lat: 'LAT: 11.0168° N'
   }

@@ -48,10 +48,10 @@ export const ContactSection: React.FC = () => {
             [ 06 // CONTACT & INITIATION ]
           </span>
           <h2 className="font-sans font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0b1c30] mb-6">
-            Initiate Deployment
+            Contact D²devs in Salem, Tamil Nadu
           </h2>
           <p className="font-sans text-base text-[#434655] leading-relaxed mb-8">
-            Have an idea for a website, mobile app, automation tool or AI project — or want to learn AI/ML and Python? Contact our engineering team directly or submit a project brief.
+            Reach out to our software development team in Salem, Tamil Nadu, India. We build websites, mobile apps, AI products, and automation tools for businesses in Salem, across Tamil Nadu, and worldwide. Have a project in mind? Submit a brief or contact us directly.
           </p>
 
           <div className="space-y-4 font-technical text-sm text-[#0b1c30]">
@@ -60,8 +60,12 @@ export const ContactSection: React.FC = () => {
               <span>d2developerss@gmail.com</span>
             </div>
             <div className="flex items-center gap-3">
+              <span className="material-symbols-outlined text-[#004ac6]">call</span>
+              <span>+91 7448440471</span>
+            </div>
+            <div className="flex items-start gap-3">
               <span className="material-symbols-outlined text-[#004ac6]">location_on</span>
-              <span>Salem // Remote // Worldwide</span>
+              <span>780/4, Shivaji Nagar, R.K. Theater Opp, P.M. Kovil Post, Salem - 636003, Tamil Nadu, India</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-[#004ac6]">schedule</span>

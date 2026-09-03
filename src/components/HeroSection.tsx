@@ -35,7 +35,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="mb-8 flex items-center gap-4 text-[#004ac6] opacity-80">
             <span className="font-label-technical">[ 01 // INTERFACE ]</span>
             <div className="h-[0.5px] w-24 bg-[#c3c6d7]"></div>
-            <span className="font-label-technical">LAT: 40.7128° N</span>
+            <span className="font-label-technical">LAT: 11.6643° N</span>
           </div>
 
           <div className="relative">
@@ -45,13 +45,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </div>
 
             <h1 className="font-sans font-bold text-5xl sm:text-6xl md:text-7xl lg:text-[80px] leading-[0.95] tracking-tighter text-[#0b1c30] relative z-10 max-w-2xl">
-              We build the <span className="text-[#004ac6] italic font-sans">future</span> with software
+              Software Solutions & <span className="text-[#004ac6] italic font-sans">AI Product</span> Development in Salem
             </h1>
 
             {/* Subheader */}
             <div className="mt-8 md:mt-12 ml-0 sm:ml-8 md:ml-12 border-l-2 border-[#004ac6]/30 pl-6 md:pl-8 max-w-md">
               <p className="font-sans text-base sm:text-lg text-[#434655] leading-relaxed">
-                We build websites, mobile apps and automation tools — and engineer AI systems from LLM fine-tuning to our own MCP server. We also teach AI/ML and Python to the next generation of builders.
+                D²devs is a leading software solutions and AI product development company in Salem, Tamil Nadu, India. We build websites, mobile apps, automation tools, and engineer AI systems — serving businesses across Tamil Nadu and worldwide.
               </p>
 
               <div className="mt-8 md:mt-10 flex flex-wrap gap-4 sm:gap-6">
