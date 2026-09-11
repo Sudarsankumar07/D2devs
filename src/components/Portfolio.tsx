@@ -8,6 +8,7 @@ interface PortfolioProps {
 
 export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
+  const [selectedOrigin, setSelectedOrigin] = useState<'ALL' | 'CLIENT_PROJECT' | 'IN_HOUSE'>('ALL');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
 
   const categories = [
@@ -18,9 +19,15 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
     { id: 'AI_ENGINEERING', label: 'AI_ENGINEERING' },
   ];
 
-  const filteredProjects = selectedFilter === 'ALL'
-    ? projects
-    : projects.filter(p => p.category === selectedFilter);
+  const originTabs: { id: 'ALL' | 'CLIENT_PROJECT' | 'IN_HOUSE'; label: string; icon: string }[] = [
+    { id: 'ALL', label: 'ALL_ORIGINS', icon: 'workspaces' },
+    { id: 'CLIENT_PROJECT', label: 'CLIENT_PROJECTS', icon: 'verified' },
+    { id: 'IN_HOUSE', label: 'IN_HOUSE // R&D', icon: 'science' },
+  ];
+
+  const filteredProjects = projects
+    .filter(p => (selectedFilter === 'ALL' ? true : p.category === selectedFilter))
+    .filter(p => (selectedOrigin === 'ALL' ? true : p.origin === selectedOrigin));
 
 
   return (
@@ -34,6 +41,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
           <h2 className="font-sans font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0b1c30]">
             Engineered Realities
           </h2>
+          <p className="font-label-technical text-xs text-[#737686] mt-3 flex items-center gap-2">
+            <span className="text-[#004ac6] font-bold">CLIENT DELIVERIES</span>
+            <span>//</span>
+            <span>OWN RESEARCH &amp; R&amp;D</span>
+          </p>
         </div>
 
         <div className="flex flex-col md:items-end gap-2">
@@ -46,6 +58,26 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
             SYS.REQ: HIGH_FIDELITY
           </span>
         </div>
+      </div>
+
+      {/* Origin Filter Tabs */}
+      <div className="mb-6 flex flex-wrap items-center gap-3">
+        <span className="font-label-technical text-[10px] text-[#737686] uppercase">
+          Origin:
+        </span>
+        {originTabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => setSelectedOrigin(tab.id)}
+            className={`flex items-center gap-2 px-4 py-2 rounded-full font-label-technical text-xs transition-all cursor-pointer ${selectedOrigin === tab.id
+                ? 'bg-[#0b1c30] text-white font-semibold shadow-md'
+                : 'bg-white/60 text-[#434655] hover:bg-[#eff4ff] border border-gray-200'
+              }`}
+          >
+            <span className="material-symbols-outlined text-sm">{tab.icon}</span>
+            {tab.label}
+          </button>
+        ))}
       </div>
 
       {/* Filter Tabs */}
@@ -81,6 +113,21 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
                 minHeight: '200px'
               }}
             >
+              {/* Origin Badge */}
+              <div className="absolute top-4 right-4 z-30">
+                {project.origin === 'CLIENT_PROJECT' ? (
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#004ac6] text-white font-label-technical text-[10px] font-bold shadow-md">
+                    <span className="material-symbols-outlined text-xs">verified</span>
+                    CLIENT BUILD
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 text-[#0b1c30] font-label-technical text-[10px] font-bold shadow-md">
+                    <span className="material-symbols-outlined text-xs">science</span>
+                    LAB // R&amp;D
+                  </span>
+                )}
+              </div>
+
               {/* Image Background */}
               <div className="absolute inset-0">
                 <div className={`absolute inset-0 bg-[#004ac6]/20 mix-blend-overlay z-10 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`}></div>

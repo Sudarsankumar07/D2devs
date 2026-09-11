@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -9,13 +9,15 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { ReviewModal } from './components/ReviewModal';
 import {
   TechnicalSpecsModal,
   StartProjectModal,
   ProjectDetailModal,
 } from './components/Modals';
 import { INITIAL_PROJECTS } from './data';
-import type { Project } from './types';
+import { loadCommunityReviews, saveCommunityReview } from './reviews';
+import type { Project, Testimonial } from './types';
 
 export const HomePage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('hero');
@@ -23,6 +25,17 @@ export const HomePage: React.FC = () => {
   const [specsModalOpen, setSpecsModalOpen] = useState<boolean>(false);
   const [startProjectModalOpen, setStartProjectModalOpen] = useState<boolean>(false);
   const [preselectedService, setPreselectedService] = useState<string>('');
+  const [reviewModalOpen, setReviewModalOpen] = useState<boolean>(false);
+  const [communityReviews, setCommunityReviews] = useState<Testimonial[]>([]);
+
+  useEffect(() => {
+    loadCommunityReviews().then(setCommunityReviews);
+  }, []);
+
+  const handleReviewSubmit = async (review: Testimonial) => {
+    const updated = await saveCommunityReview(review);
+    setCommunityReviews(updated);
+  };
 
   const handleNavigate = (sectionId: string) => {
     setActiveSection(sectionId);
@@ -74,7 +87,10 @@ export const HomePage: React.FC = () => {
         />
 
         {/* Testimonials Telemetry */}
-        <TestimonialsSection />
+        <TestimonialsSection
+          communityReviews={communityReviews}
+          onOpenReviewModal={() => setReviewModalOpen(true)}
+        />
 
         {/* FAQ Section */}
         <FaqSection />
@@ -102,6 +118,13 @@ export const HomePage: React.FC = () => {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onStartProject={() => handleOpenStartProject(`Project: ${selectedProject?.title}`)}
+      />
+
+      {/* Write a Review Modal */}
+      <ReviewModal
+        isOpen={reviewModalOpen}
+        onClose={() => setReviewModalOpen(false)}
+        onSubmit={handleReviewSubmit}
       />
     </div>
   );

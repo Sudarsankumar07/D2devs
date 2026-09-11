@@ -13,6 +13,7 @@ export interface Project {
   metrics: { label: string; value: string }[];
   techStack: string[];
   status: 'LIVE' | 'STAGING' | 'DEPLOYED' | 'PLANNED';
+  origin: 'CLIENT_PROJECT' | 'IN_HOUSE';
   link?: string;
   linkLabel?: string;
 }
@@ -53,4 +54,11 @@ export interface Testimonial {
   role: string;
   company: string;
   buildId: string;
+  rating?: number;
+  avatarUrl?: string;
+  logoUrl?: string;
+  product?: string;
+  email?: string;
+  source?: 'curated' | 'community';
+  createdAt?: string;
 }

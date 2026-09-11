@@ -24,7 +24,8 @@ export const INITIAL_PROJECTS: Project[] = [
       { label: 'Status', value: 'IN_PLAN' }
     ],
     techStack: ['MCP Protocol', 'TypeScript', 'Node.js', 'Tree-sitter', 'Graph Database', 'Git'],
-    status: 'PLANNED'
+    status: 'PLANNED',
+    origin: 'IN_HOUSE'
   },
   {
     id: 'web-platform',
@@ -47,7 +48,8 @@ export const INITIAL_PROJECTS: Project[] = [
       { label: 'Uptime', value: '99.9%' }
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Vite'],
-    status: 'LIVE'
+    status: 'LIVE',
+    origin: 'IN_HOUSE'
   },
   {
     id: 'mobile-app',
@@ -70,7 +72,8 @@ export const INITIAL_PROJECTS: Project[] = [
       { label: 'App Size', value: '< 25 MB' }
     ],
     techStack: ['React Native', 'TypeScript', 'JavaScript', 'Expo', 'Node.js'],
-    status: 'STAGING'
+    status: 'STAGING',
+    origin: 'IN_HOUSE'
   },
     {
     id: 'automation-tool',
@@ -93,7 +96,8 @@ export const INITIAL_PROJECTS: Project[] = [
       { label: 'Failure Rate', value: '< 0.5%' }
     ],
     techStack: ['Python', 'Node.js', 'TypeScript', 'REST APIs', 'Cron/Workflows'],
-    status: 'STAGING'
+    status: 'STAGING',
+    origin: 'IN_HOUSE'
   },
   {
     id: 'laptopkart',
@@ -119,6 +123,7 @@ export const INITIAL_PROJECTS: Project[] = [
     ],
     techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS 4', 'Lucide React'],
     status: 'LIVE',
+    origin: 'CLIENT_PROJECT',
     link: 'https://laptopkart.in',
     linkLabel: 'Visit Live Site'
   },
@@ -147,6 +152,7 @@ export const INITIAL_PROJECTS: Project[] = [
     ],
     techStack: ['React Native', 'Expo SDK 54', 'JavaScript', 'Groq LLM', 'AsyncStorage', 'NetInfo', 'Expo Sensors'],
     status: 'DEPLOYED',
+    origin: 'IN_HOUSE',
     link: 'https://action-reaction.en.uptodown.com/android/download',
     linkLabel: 'Play / Download Game'
   }
@@ -271,21 +277,7 @@ export const PRICING_TIERS: PricingTier[] = [
   }
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: '1',
-    quote: 'D²devs took us from a blank canvas to a fast, polished web platform. Their engineering discipline and attention to detail are exceptional.',
-    author: 'Elena Rostova',
-    role: 'Chief Technology Officer',
-    company: 'Aetheris Dynamics',
-    buildId: 'd2_prod_v8'
-  },
-  {
-    id: '2',
-    quote: 'Their React Native app and automation tools shipped on schedule and immediately cut our manual workload by half.',
-    author: 'Marcus Vance',
-    role: 'VP of Product Strategy',
-    company: 'Synthetix Global',
-    buildId: 'd2_prod_v9'
-  }
-];
+// Community reviews: when a client submits a review via the "Write a Review"
+// form, you receive it by email. Copy APPROVED reviews here so they display
+// for every visitor as a verified review. (Set rating to their star count.)
+export const TESTIMONIALS: Testimonial[] = [];

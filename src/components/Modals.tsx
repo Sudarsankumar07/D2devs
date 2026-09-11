@@ -310,6 +310,17 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
               <span className="font-label-technical text-gray-500 text-xs">
                 {project.buildVersion}
               </span>
+              {project.origin === 'CLIENT_PROJECT' ? (
+                <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#004ac6]/10 text-[#004ac6] font-label-technical text-[10px] font-bold border border-[#004ac6]/20">
+                  <span className="material-symbols-outlined text-xs">verified</span>
+                  CLIENT BUILD
+                </span>
+              ) : (
+                <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-gray-100 text-[#434655] font-label-technical text-[10px] font-bold border border-gray-200">
+                  <span className="material-symbols-outlined text-xs">science</span>
+                  LAB // R&amp;D
+                </span>
+              )}
             </div>
             <h3 className="font-sans font-extrabold text-3xl sm:text-4xl">{project.title}</h3>
           </div>
