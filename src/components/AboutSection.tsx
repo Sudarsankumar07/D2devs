@@ -7,17 +7,17 @@ export const AboutSection: React.FC = () => {
             [ 02 // ABOUT D²DEVS ]
           </span>
           <h2 className="font-sans font-bold text-4xl sm:text-5xl lg:text-6xl tracking-tight text-[#0b1c30]">
-            Software Company in Salem, Tamil Nadu
+            Freelance Developers in Salem, Tamil Nadu
           </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <p className="font-sans text-base text-[#434655] leading-relaxed">
-              D²devs is a software development company headquartered in Salem, Tamil Nadu, India. We specialize in building custom software solutions including websites, web applications, mobile apps, AI-powered products, and automation tools for businesses across Tamil Nadu and worldwide.
+              D²devs is a freelance software development team based in Salem, Tamil Nadu, India. We specialize in building custom software solutions including websites, web applications, mobile apps, AI-powered products, and automation tools for clients across Tamil Nadu and worldwide.
             </p>
             <p className="font-sans text-base text-[#434655] leading-relaxed">
-              Based in Salem, we combine deep technical expertise in modern web technologies — React, TypeScript, Node.js, Python — with a practical understanding of business needs. From startups launching their first MVP to established enterprises modernizing their digital infrastructure, we deliver production-ready software built with clean architecture and measurable outcomes.
+              Based in Salem, we combine deep technical expertise in modern web technologies — React, TypeScript, Node.js, Python — with a practical understanding of project needs. From startups launching their first MVP to established teams modernizing their digital infrastructure, we deliver production-ready software built with clean architecture and measurable outcomes.
             </p>
             <p className="font-sans text-base text-[#434655] leading-relaxed">
               Our AI product development team builds intelligent systems including LLM fine-tuning pipelines, AI agent workflows, and custom MCP servers. We also run hands-on AI/ML and Python training programs, equipping the next generation of builders in Tamil Nadu with practical skills.

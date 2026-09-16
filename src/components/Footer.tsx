@@ -5,7 +5,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-col gap-3">
           <span className="font-label-caps text-[#434655] font-bold text-lg">D²devs</span>
           <p className="font-label-technical text-xs text-[#444749] max-w-xs">
-            Software solutions, website development, and AI product development company in Salem, Tamil Nadu, India.
+            Freelance software developers for web, mobile, automation, and AI projects in Salem, Tamil Nadu, India.
           </p>
           <div className="space-y-1 mt-2">
             <p className="font-label-technical text-xs text-[#444749]">

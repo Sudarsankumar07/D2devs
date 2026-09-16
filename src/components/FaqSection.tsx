@@ -6,12 +6,12 @@ const FAQ_DATA = [
     answer: 'D²devs offers comprehensive software solutions including custom website development, web application development, mobile app development (React Native), AI product development, LLM fine-tuning, workflow automation tools, and AI/ML education and training programs. We serve businesses across Salem, Tamil Nadu, and worldwide.'
   },
   {
-    question: 'Why should I choose D²devs as my software company?',
-    answer: 'D²devs is a engineering agency with deep expertise in modern web technologies (React, TypeScript, Node.js), AI/ML engineering, and cross-platform mobile development. We deliver production-ready software with clean architecture, measurable outcomes, and dedicated post-launch support for businesses in Salem and across Tamil Nadu.'
+    question: 'Why should I choose D²devs for my software project?',
+    answer: 'D²devs is a freelance developer team with deep expertise in modern web technologies (React, TypeScript, Node.js), AI/ML engineering, and cross-platform mobile development. We deliver production-ready software with clean architecture, measurable outcomes, and dedicated post-launch support for clients in Salem and across Tamil Nadu.'
   },
   {
     question: 'How much does website development cost ?',
-    answer: 'Website development costs vary based on complexity. At D²devs, we offer three pricing tiers: Genesis Prototype (MVP websites in 3-4 weeks), Enterprise System (full-scale digital ecosystems with web, mobile, and automation), and Engineering Retainer (continuous development partnership). Contact us for a tailored quotation based on your project scope.'
+    answer: 'Website development costs vary based on complexity. At D²devs, we offer three project options: Genesis Prototype (MVP websites in 3-4 weeks), Full-Scale System (complete digital ecosystems with web, mobile, and automation), and Engineering Retainer (continuous development partnership). Contact us for a tailored quotation based on your project scope.'
   },
   {
     question: 'Does D²devs provide AI product development ?',
@@ -31,15 +31,15 @@ const FAQ_DATA = [
   },
   {
     question: 'Does D²devs work with clients outside Salem?',
-    answer: 'Yes. While D²devs is headquartered in Salem, Tamil Nadu, we work with clients across India and worldwide. Our workflow is built for remote collaboration with weekly updates, shared project boards, and clear communication. We serve clients in Chennai, Bangalore, Coimbatore, and internationally across the US, UK, and Southeast Asia.'
+    answer: 'Yes. D²devs is based in Salem, Tamil Nadu, and works with clients across India and worldwide. Our workflow is built for remote collaboration with weekly updates, shared project boards, and clear communication. We serve clients in Chennai, Bangalore, Coimbatore, and internationally across the US, UK, and Southeast Asia.'
   },
   {
-    question: 'What is the best software company in Salem, Tamil Nadu?',
-    answer: 'D²devs is a leading software company in Salem, Tamil Nadu, specializing in modern web development, AI product engineering, and mobile app development. We combine technical depth with business understanding to deliver production-ready software that scales. Our services span website development, AI product development, automation, and education — all from our base in Salem.'
+    question: 'Where can I find freelance software developers in Salem, Tamil Nadu?',
+    answer: 'D²devs is a freelance developer team in Salem, Tamil Nadu, specializing in modern web development, AI product engineering, and mobile app development. We combine technical depth with practical project understanding to deliver production-ready software that scales. Our services span website development, AI product development, automation, and education — all from our base in Salem.'
   },
   {
     question: 'How can I contact D²devs in Salem?',
-    answer: 'You can contact D²devs in Salem by email at d2developerss@gmail.com, by phone at +91 7448440471, or by visiting our office at 780/4, Shivaji Nagar, R.K. Theater Opp, P.M. Kovil Post, Salem - 636003, Tamil Nadu, India. You can also fill out the contact form on our website for a project inquiry. We typically respond within 2 hours.'
+    answer: 'You can contact the D²devs freelance developer team in Salem by email at d2developerss@gmail.com, by phone at +91 7448440471, or by using the contact form on our website for a project inquiry. We typically respond within 2 hours.'
   },
   {
     question: 'What is the difference between web development and web application development?',

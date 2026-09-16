@@ -51,7 +51,7 @@ export const ContactSection: React.FC = () => {
             Contact D²devs in Salem, Tamil Nadu
           </h2>
           <p className="font-sans text-base text-[#434655] leading-relaxed mb-8">
-            Reach out to our software development team in Salem, Tamil Nadu, India. We build websites, mobile apps, AI products, and automation tools for businesses in Salem, across Tamil Nadu, and worldwide. Have a project in mind? Submit a brief or contact us directly.
+            Reach out to our freelance software developers in Salem, Tamil Nadu, India. We build websites, mobile apps, AI products, and automation tools for clients in Salem, across Tamil Nadu, and worldwide. Have a project in mind? Submit a brief or contact us directly.
           </p>
 
           <div className="space-y-4 font-technical text-sm text-[#0b1c30]">

@@ -51,7 +51,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             {/* Subheader */}
             <div className="mt-8 md:mt-12 ml-0 sm:ml-8 md:ml-12 border-l-2 border-[#004ac6]/30 pl-6 md:pl-8 max-w-md">
               <p className="font-sans text-base sm:text-lg text-[#434655] leading-relaxed">
-                D²devs is a leading software solutions and AI product development company in Salem, Tamil Nadu, India. We build websites, mobile apps, automation tools, and engineer AI systems — serving businesses across Tamil Nadu and worldwide.
+                D²devs is a freelance software development team in Salem, Tamil Nadu, India. We build websites, mobile apps, automation tools, and AI systems for clients across Tamil Nadu and worldwide.
               </p>
 
               <div className="mt-8 md:mt-10 flex flex-wrap gap-4 sm:gap-6">
