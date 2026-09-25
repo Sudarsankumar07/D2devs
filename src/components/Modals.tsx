@@ -93,6 +93,7 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
   const [form, setForm] = useState({
     name: '',
     email: '',
+    mobile: '',
     service: preselectedService || 'Website Development',
     budget: 'MVP / Prototype',
     details: '',
@@ -112,6 +113,7 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
     const formBody = new URLSearchParams();
     formBody.append('entry.429560998', form.name);
     formBody.append('entry.1763658554', form.email);
+    formBody.append('entry.387365061', form.mobile);
     
     const combinedDetails = `Service: ${form.service}\nBudget: ${form.budget}\nDetails: ${form.details}`;
     formBody.append('entry.1292918307', combinedDetails);
@@ -243,6 +245,20 @@ export const StartProjectModal: React.FC<StartProjectModalProps> = ({
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder="sarah@cyberdyne.io"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-xl font-sans text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-label-technical text-xs text-[#0b1c30] uppercase mb-2">
+                    Mobile Number *
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    value={form.mobile}
+                    onChange={(e) => setForm({ ...form, mobile: e.target.value })}
+                    placeholder="e.g. +91 7448440471"
                     className="w-full px-4 py-3 border border-gray-200 rounded-xl font-sans text-sm"
                   />
                 </div>

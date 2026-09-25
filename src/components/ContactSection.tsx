@@ -4,6 +4,7 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    mobile: '',
     message: '',
     projectScope: 'AI & Machine Learning',
   });
@@ -19,6 +20,7 @@ export const ContactSection: React.FC = () => {
     const formBody = new URLSearchParams();
     formBody.append('entry.429560998', formData.name);
     formBody.append('entry.1763658554', formData.email);
+    formBody.append('entry.387365061', formData.mobile);
     formBody.append('entry.833238667', formData.projectScope);
     formBody.append('entry.1292918307', formData.message);
 
@@ -115,6 +117,20 @@ export const ContactSection: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="alex@enterprise.com"
+                  className="w-full px-4 py-3 bg-white/70 border border-[#c3c6d7] rounded-xl font-sans text-sm text-[#0b1c30] focus:outline-none focus:border-[#004ac6]"
+                />
+              </div>
+
+              <div>
+                <label className="block font-label-technical text-xs text-[#0b1c30] uppercase mb-2">
+                  Mobile Number *
+                </label>
+                <input
+                  type="tel"
+                  required
+                  value={formData.mobile}
+                  onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
+                  placeholder="e.g. +91 7448440471"
                   className="w-full px-4 py-3 bg-white/70 border border-[#c3c6d7] rounded-xl font-sans text-sm text-[#0b1c30] focus:outline-none focus:border-[#004ac6]"
                 />
               </div>
