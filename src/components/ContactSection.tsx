@@ -128,6 +128,8 @@ export const ContactSection: React.FC = () => {
                 <input
                   type="tel"
                   required
+                  pattern="(?:\+91[\s-]?)?[6-9][0-9]{9}"
+                  title="Enter a valid Indian mobile number, such as +91 7448440471 or 7448440471"
                   value={formData.mobile}
                   onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
                   placeholder="e.g. +91 7448440471"
