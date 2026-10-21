@@ -29,8 +29,8 @@ export const INITIAL_PROJECTS: Project[] = [
   },
   {
     id: 'web-platform',
-    category: 'WEB_PLATFORM',
-    categoryLabel: 'WEB_PLATFORM',
+    category: 'SERVICE',
+    categoryLabel: 'SERVICE',
     buildVersion: 'BUILD_v1.0',
     lat: 'LAT: 13.0827° N',
     title: 'Scalable Web Platforms',
@@ -49,12 +49,12 @@ export const INITIAL_PROJECTS: Project[] = [
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Vite'],
     status: 'LIVE',
-    origin: 'IN_HOUSE'
+    origin: 'SERVICE'
   },
   {
     id: 'mobile-app',
-    category: 'MOBILE_APP',
-    categoryLabel: 'MOBILE_APP',
+    category: 'SERVICE',
+    categoryLabel: 'SERVICE',
     buildVersion: 'BUILD_v0.9',
     lat: 'LAT: 12.9716° N',
     title: 'React Native Mobile Apps',
@@ -73,12 +73,12 @@ export const INITIAL_PROJECTS: Project[] = [
     ],
     techStack: ['React Native', 'TypeScript', 'JavaScript', 'Expo', 'Node.js'],
     status: 'STAGING',
-    origin: 'IN_HOUSE'
+    origin: 'SERVICE'
   },
     {
     id: 'automation-tool',
-    category: 'AUTOMATION',
-    categoryLabel: 'AUTOMATION',
+    category: 'SERVICE',
+    categoryLabel: 'SERVICE',
     buildVersion: 'BUILD_v0.7',
     lat: 'LAT: 11.0168° N',
     title: 'Workflow Automation Tools',
@@ -97,7 +97,7 @@ export const INITIAL_PROJECTS: Project[] = [
     ],
     techStack: ['Python', 'Node.js', 'TypeScript', 'REST APIs', 'Cron/Workflows'],
     status: 'STAGING',
-    origin: 'IN_HOUSE'
+    origin: 'SERVICE'
   },
   {
     id: 'laptopkart',

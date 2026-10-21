@@ -1,6 +1,6 @@
 export interface Project {
   id: string;
-  category: 'WEB_PLATFORM' | 'MOBILE_APP' | 'AUTOMATION' | 'AI_ENGINEERING' | 'EDUCATION';
+  category: 'WEB_PLATFORM' | 'MOBILE_APP' | 'AUTOMATION' | 'AI_ENGINEERING' | 'EDUCATION' | 'SERVICE';
   categoryLabel: string;
   buildVersion: string;
   lat: string;
@@ -13,7 +13,7 @@ export interface Project {
   metrics: { label: string; value: string }[];
   techStack: string[];
   status: 'LIVE' | 'STAGING' | 'DEPLOYED' | 'PLANNED';
-  origin: 'CLIENT_PROJECT' | 'IN_HOUSE';
+  origin: 'CLIENT_PROJECT' | 'SERVICE' | 'IN_HOUSE';
   link?: string;
   linkLabel?: string;
 }

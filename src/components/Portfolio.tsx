@@ -8,26 +8,32 @@ interface PortfolioProps {
 
 export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
-  const [selectedOrigin, setSelectedOrigin] = useState<'ALL' | 'CLIENT_PROJECT' | 'IN_HOUSE'>('ALL');
+  const [selectedOrigin, setSelectedOrigin] = useState<'ALL' | 'CLIENT_PROJECT' | 'SERVICE' | 'IN_HOUSE'>('ALL');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
 
   const categories = [
     { id: 'ALL', label: 'ALL_BUILDS' },
+    { id: 'SERVICE', label: 'SERVICES' },
     { id: 'WEB_PLATFORM', label: 'WEB_PLATFORMS' },
     { id: 'MOBILE_APP', label: 'MOBILE_APPS' },
     { id: 'AUTOMATION', label: 'AUTOMATION' },
     { id: 'AI_ENGINEERING', label: 'AI_ENGINEERING' },
   ];
 
-  const originTabs: { id: 'ALL' | 'CLIENT_PROJECT' | 'IN_HOUSE'; label: string; icon: string }[] = [
+  const originTabs: { id: 'ALL' | 'CLIENT_PROJECT' | 'SERVICE' | 'IN_HOUSE'; label: string; icon: string }[] = [
     { id: 'ALL', label: 'ALL_ORIGINS', icon: 'workspaces' },
     { id: 'CLIENT_PROJECT', label: 'CLIENT_PROJECTS', icon: 'verified' },
+    { id: 'SERVICE', label: 'SERVICES', icon: 'design_services' },
     { id: 'IN_HOUSE', label: 'IN_HOUSE // R&D', icon: 'science' },
   ];
 
   const filteredProjects = projects
     .filter(p => (selectedFilter === 'ALL' ? true : p.category === selectedFilter))
-    .filter(p => (selectedOrigin === 'ALL' ? true : p.origin === selectedOrigin));
+    .filter(p => (selectedOrigin === 'ALL' ? true : p.origin === selectedOrigin))
+    .sort((a, b) => {
+      const originOrder = { CLIENT_PROJECT: 0, SERVICE: 1, IN_HOUSE: 2 };
+      return originOrder[a.origin] - originOrder[b.origin];
+    });
 
 
   return (
@@ -119,6 +125,11 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
                   <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#004ac6] text-white font-label-technical text-[10px] font-bold shadow-md">
                     <span className="material-symbols-outlined text-xs">verified</span>
                     CLIENT BUILD
+                  </span>
+                ) : project.origin === 'SERVICE' ? (
+                  <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#40b8ff] text-[#0b1c30] font-label-technical text-[10px] font-bold shadow-md">
+                    <span className="material-symbols-outlined text-xs">design_services</span>
+                    SERVICE
                   </span>
                 ) : (
                   <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 text-[#0b1c30] font-label-technical text-[10px] font-bold shadow-md">

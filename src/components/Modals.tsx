@@ -331,6 +331,11 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
                   <span className="material-symbols-outlined text-xs">verified</span>
                   CLIENT BUILD
                 </span>
+              ) : project.origin === 'SERVICE' ? (
+                <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#40b8ff]/20 text-[#0b1c30] font-label-technical text-[10px] font-bold border border-[#40b8ff]/40">
+                  <span className="material-symbols-outlined text-xs">design_services</span>
+                  SERVICE
+                </span>
               ) : (
                 <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-gray-100 text-[#434655] font-label-technical text-[10px] font-bold border border-gray-200">
                   <span className="material-symbols-outlined text-xs">science</span>
