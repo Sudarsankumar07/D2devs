@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -17,6 +17,7 @@ import {
 } from './components/Modals';
 import { INITIAL_PROJECTS } from './data';
 import { loadCommunityReviews, saveCommunityReview } from './reviews';
+import { recordVisitor } from './visitors';
 import type { Project, Testimonial } from './types';
 
 export const HomePage: React.FC = () => {
@@ -27,9 +28,19 @@ export const HomePage: React.FC = () => {
   const [preselectedService, setPreselectedService] = useState<string>('');
   const [reviewModalOpen, setReviewModalOpen] = useState<boolean>(false);
   const [communityReviews, setCommunityReviews] = useState<Testimonial[]>([]);
+  const [visitorCount, setVisitorCount] = useState<number | null>(null);
+  const visitorRecorded = useRef(false);
 
   useEffect(() => {
     loadCommunityReviews().then(setCommunityReviews);
+    if (visitorRecorded.current) return;
+    visitorRecorded.current = true;
+
+    recordVisitor()
+      .then(setVisitorCount)
+      .catch((error: unknown) => {
+        console.error('[visitors] failed to load visitor count:', error);
+      });
   }, []);
 
   const handleReviewSubmit = async (review: Testimonial) => {
@@ -74,6 +85,7 @@ export const HomePage: React.FC = () => {
         <Portfolio
           projects={INITIAL_PROJECTS}
           onSelectProject={(project) => setSelectedProject(project)}
+          visitorCount={visitorCount}
         />
 
         {/* Services Section */}

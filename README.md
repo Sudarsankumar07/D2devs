@@ -7,6 +7,13 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
+## Visitor count
+
+The portfolio visitor count is stored in Vercel Blob and increments once when the
+page loads. Deploy the project to Vercel with `BLOB_READ_WRITE_TOKEN` configured
+to enable the shared count. The UI shows an unavailable marker when the API
+cannot be reached instead of displaying a fabricated number.
+
 ## React Compiler
 
 The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).

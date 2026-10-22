@@ -4,9 +4,10 @@ import type { Project } from '../types';
 interface PortfolioProps {
   projects: Project[];
   onSelectProject: (project: Project) => void;
+  visitorCount: number | null;
 }
 
-export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject }) => {
+export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject, visitorCount }) => {
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
   const [selectedOrigin, setSelectedOrigin] = useState<'ALL' | 'CLIENT_PROJECT' | 'SERVICE' | 'IN_HOUSE'>('ALL');
   const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
@@ -59,6 +60,18 @@ export const Portfolio: React.FC<PortfolioProps> = ({ projects, onSelectProject 
             <span className="font-label-technical">STATUS</span>
             <div className="h-[1px] w-12 bg-[#c3c6d7]"></div>
             <span className="font-label-technical text-[#004ac6] font-bold">LIVE_DATA</span>
+          </div>
+          <div
+            className="flex items-center gap-2 font-label-technical text-xs text-[#0b1c30]"
+            aria-label={
+              visitorCount === null ? 'Visitor count unavailable' : `${visitorCount} visitors`
+            }
+          >
+            <span className="h-2 w-2 rounded-full bg-[#22c55e] shadow-[0_0_8px_rgba(34,197,94,0.7)]"></span>
+            <span>VISITORS:</span>
+            <span className="font-bold tabular-nums">
+              {visitorCount === null ? '—' : visitorCount.toLocaleString()}
+            </span>
           </div>
           <span className="font-label-technical text-[#737686] text-xs">
             SYS.REQ: HIGH_FIDELITY
