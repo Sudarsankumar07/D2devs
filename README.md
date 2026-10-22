@@ -10,9 +10,10 @@ Currently, two official plugins are available:
 ## Visitor count
 
 The portfolio visitor count is stored in Vercel Blob and increments once when the
-page loads. Deploy the project to Vercel with `BLOB_READ_WRITE_TOKEN` configured
-to enable the shared count. The UI shows an unavailable marker when the API
-cannot be reached instead of displaying a fabricated number.
+page loads. Create a Vercel Blob store and connect it to the deployment so
+Vercel injects `BLOB_READ_WRITE_TOKEN` into the production function. If the
+token is missing, `/api/visitors` returns `503` and the UI shows an unavailable
+marker instead of displaying a fabricated number.
 
 ## React Compiler
 

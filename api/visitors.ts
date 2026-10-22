@@ -1,4 +1,4 @@
-import { head, put } from '@vercel/blob';
+import { BlobNotFoundError, head, put } from '@vercel/blob';
 
 const BLOB_KEY = 'analytics/d2devs-visitors.json';
 
@@ -19,7 +19,7 @@ const readVisitorCount = async (): Promise<number> => {
       ? data.count
       : 0;
   } catch (error) {
-    if (error instanceof Error && error.message.includes('not found')) {
+    if (error instanceof BlobNotFoundError) {
       return 0;
     }
     throw error;
@@ -33,6 +33,11 @@ export default async function handler(
   try {
     if (req.method !== 'POST') {
       return res.status(405).json({ error: 'Method not allowed' });
+    }
+
+    if (!process.env.BLOB_READ_WRITE_TOKEN) {
+      console.error('[/api/visitors] BLOB_READ_WRITE_TOKEN is not configured');
+      return res.status(503).json({ error: 'Visitor counter is not configured' });
     }
 
     const count = (await readVisitorCount()) + 1;
